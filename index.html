@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doughlightful Dreams Bakery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .font-script { font-family: 'Dancing Script', cursive; }
+        .gradient-bg { background: linear-gradient(135deg, #ec4899 0%, #f97316 100%); }
+        canvas { touch-action: none; cursor: crosshair; }
+
+        /* --- Animations --- */
+        @keyframes magicFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .animate-magic {
+            display: inline-block;
+            animation: magicFloat 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        .magic-wand-spin { transition: transform 0.5s ease-in-out; }
+        #menu-btn:hover .magic-wand-spin { transform: rotate(360deg); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 min-h-screen">
+
+<nav class="bg-white/90 backdrop-blur-md shadow-xl fixed top-0 w-full z-[100] border-b border-pink-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+        <div class="flex items-center space-x-2">
+            <i class="fas fa-birthday-cake text-3xl text-pink-500"></i>
+            <h1 class="font-script text-3xl font-bold text-gray-800">Zelle’s Doughlightful Dreams</h1>
+        </div>
+        <div class="hidden md:flex space-x-8">
+            <a href="#home" class="text-gray-700 hover:text-pink-500 font-semibold transition-all">Home</a>
+            <a href="#about" class="text-gray-700 hover:text-pink-500 font-semibold transition-all">About</a>
+            <a href="#menu" class="text-gray-700 hover:text-pink-500 font-semibold transition-all">Menu</a>
+            <a href="#game" class="text-gray-700 hover:text-pink-500 font-semibold transition-all">Play Game!</a>
+        </div>
+        <button id="menu-toggle" class="md:hidden text-pink-500 text-2xl"><i class="fas fa-bars"></i></button>
+    </div>
+</nav>
+
+<section id="home" class="pt-52 pb-20 gradient-bg overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="font-script text-6xl md:text-8xl font-bold text-white mb-8 drop-shadow-2xl animate-magic">
+            Doughlightful Dreams
+        </h1>
+        <p class="text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Step into a world of warm pastries and sweet dreams, where every treat is made to delight your heart.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#menu" id="menu-btn" class="bg-white text-pink-500 px-12 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all flex items-center group">
+                View Magic Menu <i class="fas fa-magic ml-2 magic-wand-spin"></i>
+            </a>
+            <a href="#game" class="border-2 border-white text-white px-12 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-pink-500 transition-all">
+                Play Game!
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="inline-block bg-gradient-to-r from-pink-500 to-orange-500 text-white px-6 py-3 rounded-full font-semibold text-sm uppercase tracking-wider">
+                    Established 2020
+                </div>
+                <h2 class="font-script text-6xl font-bold text-gray-800">Our Story</h2>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Founded in 2020 by **Zelle**, Doughlightful Dreams began as a dream to bring warmth and "magic" to the neighborhood. 
+                    Every dough is kneaded with care, every filling mixed with passion, and every decoration perfected to bring a smile to your face.
+                </p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="text-center p-8 bg-pink-50 rounded-3xl">
+                        <i class="fas fa-award text-4xl text-pink-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Premium Quality</h3>
+                        <p class="text-gray-600">Only the finest local ingredients</p>
+                    </div>
+                    <div class="text-center p-8 bg-orange-50 rounded-3xl">
+                        <i class="fas fa-heart text-4xl text-orange-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Made with Love</h3>
+                        <p class="text-gray-600">Baked fresh every single morning</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="bg-pink-100 p-8 rounded-4xl">
+                    <div class="w-full h-96 bg-gray-200 rounded-3xl flex items-center justify-center text-gray-400 overflow-hidden">
+                        <img src="images/pic 1.jpg" alt="Bakery Interior" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="menu" class="py-24 bg-gradient-to-b from-yellow-50 to-pink-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+            <h2 class="font-script text-6xl font-bold text-gray-800 mb-6">Our Pastry Symphony</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Each creation is a love letter to tradition, crafted with ingredients sourced from local farms and time-tested techniques passed down through generations.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group bg-white rounded-4xl p-8 shadow-xl hover:shadow-2xl hover-lift border border-gray-100 overflow-hidden">
+                <div class="w-full h-48 rounded-3xl overflow-hidden group-hover:scale-110 transition-transform duration-500 mb-6 relative">
+                    <img src="images/pic 2.jpg" alt="Almond Croissant Supreme" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <h3 class="font-bold text-2xl text-gray-800 mb-4 font-script">🍫 Chocolate Lava Cake</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Warm chocolate cake with molten center, served with housemade vanilla bean ice cream and raspberry coulis river.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-2xl font-bold text-pink-500">₱ 120</span>
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center text-white text-xl hover:bg-white hover:text-pink-500 transition-all duration-300">
+                        +
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-4xl p-8 shadow-xl hover:shadow-2xl hover-lift border border-gray-100 overflow-hidden">
+                <div class="w-full h-48 rounded-3xl overflow-hidden group-hover:scale-110 transition-transform duration-500 mb-6 relative">
+                    <img src="images/pic 3.jpg" alt="Honey Lavender Scone" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <h3 class="font-bold text-2xl text-gray-800 mb-4 font-script">🍯 Honey Lavender Scone</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Tender scones infused with fragrant lavender and drizzled with wildflower honey glaze, served with clotted cream whispers.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-2xl font-bold text-pink-500">₱ 125</span>
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center text-white text-xl hover:bg-white hover:text-pink-500 transition-all duration-300">
+                        +
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-4xl p-8 shadow-xl hover:shadow-2xl hover-lift border border-gray-100 overflow-hidden">
+                <div class="w-full h-48 rounded-3xl overflow-hidden group-hover:scale-110 transition-transform duration-500 mb-6 relative">
+                    <img src="images/pic 4.jpg" alt="Lemon Burst Danish" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <h3 class="font-bold text-2xl text-gray-800 mb-4 font-script">🍋 Lemon Burst Danish</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Zesty lemon curd nestled in buttery pastry lattice, finished with candied lemon zest and a dusting of powdered sunshine.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-2xl font-bold text-pink-500">₱ 130</span>
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center text-white text-xl hover:bg-white hover:text-pink-500 transition-all duration-300">
+                        +
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-4xl p-8 shadow-xl hover:shadow-2xl hover-lift border border-gray-100 overflow-hidden">
+                <div class="w-full h-48 rounded-3xl overflow-hidden group-hover:scale-110 transition-transform duration-500 mb-6 relative">
+                    <img src="images/pic 5.jpg" alt="Cinnamon Apple Turnover" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <h3 class="font-bold text-2xl text-gray-800 mb-4 font-script">🍎 Cinnamon Apple Turnover</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Orchard-fresh apples slow-cooked with cinnamon and brown sugar, wrapped in golden puff pastry and kissed with caramel drizzle.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-2xl font-bold text-pink-500">₱ 125</span>
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center text-white text-xl hover:bg-white hover:text-pink-500 transition-all duration-300">
+                        +
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-4xl p-8 shadow-xl hover:shadow-2xl hover-lift border border-gray-100 overflow-hidden">
+                <div class="w-full h-48 rounded-3xl overflow-hidden group-hover:scale-110 transition-transform duration-500 mb-6 relative">
+                    <img src="images/pic 6.jpg" alt="Matcha Red Bean Roll" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <h3 class="font-bold text-2xl text-gray-800 mb-4 font-script">🌿 Matcha Red Bean Roll</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Japanese-inspired soft roll filled with sweet red bean paste and premium matcha glaze, creating perfect umami-sweet harmony.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-2xl font-bold text-pink-500">₱ 145</span>
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center text-white text-xl hover:bg-white hover:text-pink-500 transition-all duration-300">
+                        +
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-4xl p-8 shadow-xl hover:shadow-2xl hover-lift border border-gray-100 overflow-hidden">
+                <div class="w-full h-48 rounded-3xl overflow-hidden group-hover:scale-110 transition-transform duration-500 mb-6 relative">
+                    <img src="images/pic 7.jpg" alt="Pistachio Dream Bar" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <h3 class="font-bold text-2xl text-gray-800 mb-4 font-script">🥜 Pistachio Dream Bar</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Crunchy pistachio crust cradling silky pistachio cream, topped with chocolate ganache and crushed pistachio jewels.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-2xl font-bold text-pink-500">₱ 155</span>
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center text-white text-xl hover:bg-white hover:text-pink-500 transition-all duration-300">
+                        +
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-4xl p-8 shadow-xl hover:shadow-2xl hover-lift border border-gray-100 overflow-hidden">
+                <div class="w-full h-48 rounded-3xl overflow-hidden group-hover:scale-110 transition-transform duration-500 mb-6 relative">
+                    <img src="images/pic 8.jpg" alt="Blackberry Jewel Tart" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <h3 class="font-bold text-2xl text-gray-800 mb-4 font-script">🫐 Blackberry Jewel Tart</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Shortbread crust filled with blackberry coulis and vanilla pastry cream, garnished with fresh blackberries and gold leaf flecks.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-2xl font-bold text-pink-500">₱ 150</span>
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center text-white text-xl hover:bg-white hover:text-pink-500 transition-all duration-300">
+                        +
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-4xl p-8 shadow-xl hover:shadow-2xl hover-lift border border-gray-100 overflow-hidden">
+                <div class="w-full h-48 rounded-3xl overflow-hidden group-hover:scale-110 transition-transform duration-500 mb-6 relative">
+                    <img src="images/pic 9.jpg" alt="Chocolate Lava Cake" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <h3 class="font-bold text-2xl text-gray-800 mb-4 font-script"> 🥐 Almond Croissant Supreme</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Flaky layers of French butter pastry embrace a generous heart of almond frangipane, crowned with powdered sugar snowfall and toasted almond crunch. 
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-2xl font-bold text-pink-500">₱ 140</span>
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center text-white text-xl hover:bg-white hover:text-pink-500 transition-all duration-300">
+                        +
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-4xl p-8 shadow-xl hover:shadow-2xl hover-lift border border-gray-100 overflow-hidden lg:col-span-2 md:col-span-2">
+                <div class="w-full h-48 rounded-3xl overflow-hidden group-hover:scale-110 transition-transform duration-500 mb-6 relative">
+                    <img src="images/pic 11.jpg" alt="The Grand Assortment" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                    <div class="absolute top-4 right-4 bg-gradient-to-r from-pink-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold">
+                        FAVORITES
+                    </div>
+                </div>
+                <h3 class="font-bold text-3xl text-gray-800 mb-4 font-script">👑 The Grand Assortment</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                    Can’t decide? Our signature selection brings together a luxurious spread of freshly baked pastries displayed in our showcase from flaky croissants to soft buns and golden breads. Perfect for sharing, sampling, or treating yourself to a little bit of everything our bakery has to offer.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-3xl font-bold text-pink-500">𐙚 ˚ ⋆｡˚ ᡣ𐭩</span>
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-orange-500 rounded-3xl flex items-center justify-center text-white text-2xl hover:bg-white hover:text-pink-500 transition-all duration-300">
+                        ✨
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-4xl p-8 shadow-xl hover:shadow-2xl hover-lift border border-gray-100 overflow-hidden">
+                <div class="w-full h-48 rounded-3xl overflow-hidden group-hover:scale-110 transition-transform duration-500 mb-6 relative">
+                    <img src="images/pic 10.jpg" alt="Classic Éclair" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <h3 class="font-bold text-2xl text-gray-800 mb-4 font-script">⚡ Classic Éclair</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Crispy choux pastry filled with velvety vanilla pastry cream, generously glazed with chocolate and finished with gold leaf accents.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-2xl font-bold text-pink-500">₱ 175</span>
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center text-white text-xl hover:bg-white hover:text-pink-500 transition-all duration-300">
+                        +
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="game" class="py-10 bg-[#fff9f5] min-h-screen select-none font-sans">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl font-black text-gray-800 text-center mb-10 italic">TILE FUN PANTRY: Elite Edition</h2>
+
+        <div class="flex flex-col lg:flex-row gap-8 items-start justify-center">
+            
+            <div class="w-full lg:w-64 bg-white p-6 rounded-3xl shadow-md border-t-4 border-pink-400">
+                <h3 class="font-black text-gray-800 mb-4 text-sm uppercase tracking-widest">How to Play</h3>
+                <ul class="text-xs text-gray-500 space-y-4">
+                    <li><span class="text-pink-500 font-bold">1.</span> Click a pastry tile to move it to your side tray.</li>
+                    <li><span class="text-pink-500 font-bold">2.</span> Match <span class="font-bold text-gray-800">3 identical treats</span> to clear them.</li>
+                    <li><span class="text-pink-500 font-bold">3.</span> Darker tiles are <span class="font-bold text-gray-800">LOCKED</span>. Clear the top layers to reach them.</li>
+                    <li><span class="text-pink-500 font-bold">4.</span> Don't fill all <span class="font-bold text-gray-800">7 slots</span> without a match, or it's Game Over!</li>
+                </ul>
+            </div>
+
+            <div id="tileBoard" class="relative bg-orange-50/50 rounded-3xl p-6 h-[550px] w-full max-w-[500px] shadow-inner border-4 border-white overflow-hidden">
+                </div>
+
+            <div class="w-full lg:w-32 flex flex-col items-center">
+                <p class="text-[10px] font-bold text-gray-400 mb-4 uppercase tracking-[0.2em]">Your Tray</p>
+                <div id="tray" class="flex flex-col gap-2 bg-white border-4 border-pink-100 rounded-3xl p-3 min-h-[450px] w-full shadow-xl items-center">
+                    </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div id="gameOverlay" class="fixed inset-0 bg-black/80 hidden z-[100] flex items-center justify-center p-6">
+    <div class="bg-white rounded-3xl p-10 max-w-sm w-full text-center">
+        <h3 id="statusTitle" class="text-3xl font-black mb-4 uppercase italic"></h3>
+        <p id="statusDesc" class="text-gray-500 mb-8"></p>
+        <button onclick="initGame()" class="bg-pink-500 text-white w-full py-4 rounded-full font-black shadow-lg hover:bg-pink-600">RESTART MISSION</button>
+    </div>
+</div>
+
+<footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-16 mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-12 text-center md:text-left">
+            <div>
+                <div class="flex items-center justify-center md:justify-start mb-6">
+                    <i class="fas fa-birthday-cake text-4xl text-pink-400 mr-4"></i>
+                    <h3 class="font-script text-3xl font-bold">Doughlightful Dreams</h3>
+                </div>
+                <p class="text-gray-400 mb-6 max-w-md mx-auto md:mx-0">
+                    Crafting moments of joy, one pastry at a time since 2020.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-6">Visit Us</h4>
+                <p class="text-gray-400 mb-4">123 Sweet Street, Bakeryville, BV 12345</p>
+                <p class="text-gray-400 mb-4">Mon-Sat: 7AM-8PM | Sun: 8AM-6PM</p>
+                <p class="text-gray-400">📞 (555) 123-BAKE</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-6">#1 Bestseller</h4>
+                <div class="bg-gradient-to-r from-pink-500/20 to-orange-500/20 p-6 rounded-2xl">
+                    <p class="font-semibold text-lg mb-2">⚡Classic Éclair</p>
+                    <p class="text-sm text-gray-400">500+ sold daily</p>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+            <p>&copy; 2026 Doughlightful Dreams Bakery. Made with <i class="fas fa-heart text-pink-500"></i> and lots of butter.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="game.js"></script>
+</body>
+</html>
